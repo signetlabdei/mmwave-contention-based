@@ -267,7 +267,7 @@ int main (int argc, char *argv[])
 
   // Install HTTP client
     serverApps.Add(burstSinkHelper.Install (group1.Get (3)));
-    //std::cout << serverApps.GetN() << std::endl;
+    
     Ptr<BurstSink> burstSink = serverApps.Get (serverApps.GetN () - 1)->GetObject<BurstSink> ();
     burstSink->TraceConnectWithoutContext ("BurstRx", MakeBoundCallback (&RxBurstCallback, 1+group1.Get(3)->GetId(), statsCalculator));
 
@@ -303,7 +303,7 @@ int main (int argc, char *argv[])
 
   // Install HTTP client
     serverApps.Add(burstSinkHelper.Install (group2.Get (3)));
-    //std::cout << serverApps.GetN() << std::endl;
+    
     Ptr<BurstSink> burstSink = serverApps.Get (serverApps.GetN () - 1)->GetObject<BurstSink> ();
     burstSink->TraceConnectWithoutContext ("BurstRx", MakeBoundCallback (&RxBurstCallback, 1+group2.Get(3)->GetId(), statsCalculator));
 
